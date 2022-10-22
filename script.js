@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
 const $calendar = $(".calendar");
+let $monthName = $('#monthName');
 
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth() + 1;
@@ -10,6 +11,11 @@ let currentDay;
 let numberOfDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
 
 
+
+
+const date = new Date();
+
+ $monthName.text(date.toLocaleString("default", { month: "long" }))
 
 
 
@@ -150,13 +156,13 @@ function createCalendar() {
 	const $daysOfWeekRow = $("<div></div>").addClass("row");
 
 	const dayOfWeekArray = [
-		"sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
+		"sun",
+		"Mon",
+		"Tues",
+		"Wed",
+		"Thurs",
+		"Fri",
+		"Sat",
 	];
 
 	let dayOfWeekCounter = 0;
@@ -244,11 +250,10 @@ function createCalendar() {
 	
 	
 	if ($calendar.children().last().children().length < 7) {
-		for (let i = 0; i < lastRowLength; i++) {
-			
+		for (let i = 0; i < 7 - lastRowLength; i++) {
+			let emptyCol = $('<div></div>').addClass('col border')
+			lastRow.append(emptyCol)
 		}
-		let newCol = $('<div></div>').addClass('col border').text('haha');
-		lastRow.append(newCol)
 	}
 }
 
