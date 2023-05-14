@@ -1,1 +1,1 @@
-#### Calendary built with jquery and bootstrap 4
+#### Calendar built with jquery and bootstrap 4
