@@ -1,4 +1,4 @@
-#### Calendar built with jquery and bootstrap 4.
+#### Dynamic calendar built with jquery and bootstrap 4.
 
 
 ![calendar](SampleImage/calendar.png);
