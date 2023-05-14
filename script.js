@@ -2,24 +2,15 @@ $( document ).ready(function() {
 	const $calendar = $(".calendar");
 	let $monthName = $('#monthName');
 
-	
-
-
 	let currentYear = new Date().getFullYear();
 	let currentMonth = new Date().getMonth() + 1;
 	let currentDayNum = new Date().getDay()
 	let numberOfDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
 	let currentDay;
 	
-	
 	const date = new Date();
 	
 	 $monthName.text(date.toLocaleString("default", { month: "long" }))
-	
-	
-	
-	
-	
 	
 	function findCurrentDay() {
 		switch (currentDayNum) {
@@ -49,16 +40,6 @@ $( document ).ready(function() {
 	
 	findCurrentDay();
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	//find what day of the week the first day of the month is	
 	function getFirstDay() {
 		const date = new Date(currentYear, currentMonth - 1, 1);
@@ -67,11 +48,6 @@ $( document ).ready(function() {
 	
 	let firstDayOfMonth = getFirstDay();
 
-
-
-
-	
-
 	///create the calendar rows that will be used in createCalendar()
 	let $numberRowOne = $('<div></div>').addClass('row');
 	let $numberRowTwo = $('<div></div>').addClass('row ');
@@ -79,13 +55,6 @@ $( document ).ready(function() {
 	let $numberRowFour = $('<div></div>').addClass('row numRow');
 	let $numberRowFive = $('<div></div>').addClass('row numRow');
 	let $numberRowSix = $('<div></div>').addClass('row numRow');
-	
-	
-
-	
-	
-	
-	
 	
 	//create array that holds that holds a number for every day of the month for example 1-31
 	function createDaysArray(days) {
@@ -99,14 +68,6 @@ $( document ).ready(function() {
 	}
 
 	let numOfDaysArr = createDaysArray(numberOfDaysInMonth);
-	
-
-	
-
-
-
-
-
 
 	// figure out how many blank spaces will go before the first day of the month, for example if the first day of the month isnt monday there will be blank spaces before it	
 	function createBlankSpaces() {
@@ -121,10 +82,6 @@ $( document ).ready(function() {
 			numberRowCounter++
 		}
 	} 
-		
-	
-	
-	
 	
 	let numberRowCounter = 0
 	
@@ -144,14 +101,6 @@ $( document ).ready(function() {
 			dayOfWeekCounter++;
 		});
 		$calendar.append($daysOfWeekRow);
-	
-		
-		
-		
-		
-		
-		
-		
 		
 		createBlankSpaces(numberRowCounter);
 
@@ -194,8 +143,6 @@ $( document ).ready(function() {
 				numberRowCounter++		
 			}
 		});
-	
-		
 
 		/// add blank spaces to the last row of calendar
 		let lastRow = $calendar.children().last();
@@ -207,7 +154,6 @@ $( document ).ready(function() {
 			}
 		}
 	}
-	
 	
 	createCalendar();
 });
