@@ -86,10 +86,6 @@ $( document ).ready(function() {
 			numberRowCounter++
 		}
 	} 
-		
-	
-	
-	
 	
 	let numberRowCounter = 0
 	
